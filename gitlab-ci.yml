@@ -1,0 +1,30 @@
+image: docker:latest
+
+stages:
+  - build
+  - deploy-docker
+
+build:
+  image: maven:4-jdk-11
+  stage: build
+  before_script:
+    - echo "build project"
+  script:
+    - mvn clean install
+  artifacts:
+    paths:
+      - target/*.jar
+  after_script:
+    - echo "done build project"
+
+deploy-docker:
+  stage: deploy-docker
+  before_script:
+    - echo "deploy docker"
+    - docker logout
+    - docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
+  script:
+    - docker build -t team33/social-service .
+    - docker push team33/social-service
+  after_script:
+    - echo "done deploy docker"
