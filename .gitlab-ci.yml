@@ -9,7 +9,8 @@ build:
   stage: build
   before_script:
     - echo "build project"
-  script: "mvn clean package -B"
+  script:
+    - mvn clean package
   artifacts:
     paths:
       - target/*.jar
