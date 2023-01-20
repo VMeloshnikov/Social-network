@@ -7,12 +7,9 @@ stages:
 build:
   image: maven:4-jdk-11
   stage: build
-  tags:
-    - build
   before_script:
     - echo "build project"
-  script:
-    - mvn clean package
+  script: "mvn clean package -B"
   artifacts:
     paths:
       - target/*.jar
@@ -21,8 +18,6 @@ build:
 
 deploy-docker:
   stage: deploy-docker
-  tags:
-    - deploy-docker
   before_script:
     - echo "deploy docker"
     - docker logout
