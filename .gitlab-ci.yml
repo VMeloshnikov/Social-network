@@ -10,7 +10,7 @@ build:
   before_script:
     - echo "build project"
   script:
-    - mvn clean install
+    - mvn clean package
   artifacts:
     paths:
       - target/*.jar
