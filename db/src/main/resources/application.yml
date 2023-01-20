@@ -1,0 +1,15 @@
+spring:
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/src/main/resources/db/db.changelog-master.xml
+  datasource:
+    url:  #  файл бд db.mv.db
+    username:  # имя пользователя консоли
+    password:  # пароль консоли
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="social-service-domain" />
+        <module name="model" />
         <module name="social-service-api" />
         <module name="social-service-impl" />
         <module name="social-service-db" />
@@ -25,6 +26,7 @@
       <module name="db" options="" />
       <module name="domain" options="" />
       <module name="impl" options="" />
+      <module name="model" options="-parameters" />
       <module name="social-service-api" options="-parameters" />
       <module name="social-service-db" options="-parameters" />
       <module name="social-service-domain" options="-parameters" />
