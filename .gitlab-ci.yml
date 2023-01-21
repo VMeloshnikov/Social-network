@@ -12,7 +12,7 @@ build:
     - mvn clean package
   artifacts:
     paths:
-      - target/*.jar
+      - impl/target/*.jar
   after_script:
     - echo "done build project"
 
