@@ -5,7 +5,7 @@ stages:
   - deploy-docker
 
 build:
-  image: maven:4-jdk-11
+  image: maven:3.8-openjdk-11
   stage: build
   before_script:
     - echo "build project"
