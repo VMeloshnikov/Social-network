@@ -19,14 +19,33 @@
                 <constraints nullable="false" unique="true"/>
             </column>
 
-            <column name="e_mail" type="VARCHAR(255)">
+            <column name="email" type="VARCHAR(255)">
                 <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="firstname" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="lastname" type="VARCHAR(100)">
+                <constraints nullable="false"/>
             </column>
 
             <column name="password" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
 
+            <column name="created" type="TIMESTAMP" defaultValue="NOW()">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="updated" type="TIMESTAMP" defaultValue="NOW()">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="status" type="VARCHAR(25)" defaultValue="ACTIVE">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
     </changeSet>
 
@@ -37,6 +56,17 @@
             </column>
             <column name="name" type="varchar(100)">
                 <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="created" type="TIMESTAMP" defaultValue="NOW()">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="updated" type="TIMESTAMP" defaultValue="NOW()">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="status" type="VARCHAR(25)" defaultValue="ACTIVE">
+                <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
@@ -75,7 +105,7 @@
             <column name="name" value="ADMIN"/>
         </insert>
         <insert tableName="roles">
-            <column name="name" value="MODERATOR"/>
+            <column name="name" value="USER"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

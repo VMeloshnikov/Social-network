@@ -1,4 +1,4 @@
-package ru.skillbox.diplom.group33.social.service.security.jwt;
+package ru.skillbox.diplom.group33.social.service.config.security.jwt;
 
 import org.springframework.security.core.AuthenticationException;
 

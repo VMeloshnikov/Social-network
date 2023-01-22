@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    allow-circular-references: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jwt?serverTimezone=UTCr
+    username: postgres
+    password: GBACK
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    url: jdbc:postgresql://localhost:5432/jwt?serverTimezone=UTC
+    user: postgres
+    password: GBACK
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+jwt:
+  secret:
+    access: jwtsocialserviceapptywrtywryhwsrtyhsfthshsrhsrth
+    refresh: jwtsocialsirviceapprefreshtokenstrhsrthhtrstthsrhsh
+
+

@@ -1,4 +1,4 @@
-package ru.skillbox.diplom.group33.social.service.security.jwt;
+package ru.skillbox.diplom.group33.social.service.config.security.jwt;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,8 +16,8 @@ public class JwtUserFactory {
     public static JwtUser create(User user) {
         return new JwtUser(
                 user.getId(),
-                user.getUsername(),
-                user.getE_mail(),
+                user.getUserName(),
+                user.getEmail(),
                 user.getPassword(),
                 mapToGrantedAuthorities(new ArrayList<>(user.getRoles()))
                 );

@@ -5,5 +5,7 @@ import ru.skillbox.diplom.group33.social.service.model.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    User findByName(String name);
+    User findByUserName(String name);
+
+    User findByEmail(String email);
 }

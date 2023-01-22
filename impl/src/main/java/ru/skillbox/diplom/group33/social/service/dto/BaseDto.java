@@ -5,7 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AuthenticationRequestDto {
-    private String username;
-    private String password;
+public class BaseDto {
+
+    private Long id;
+    private boolean is_deleted;
 }

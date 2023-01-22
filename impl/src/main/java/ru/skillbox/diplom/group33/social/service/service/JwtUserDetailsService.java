@@ -1,23 +1,22 @@
-package ru.skillbox.diplom.group33.social.service.security;
+package ru.skillbox.diplom.group33.social.service.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import ru.skillbox.diplom.group33.social.service.config.security.jwt.JwtUserFactory;
 import ru.skillbox.diplom.group33.social.service.model.User;
-import ru.skillbox.diplom.group33.social.service.security.jwt.JwtUser;
-import ru.skillbox.diplom.group33.social.service.security.jwt.JwtUserFactory;
-import ru.skillbox.diplom.group33.social.service.service.UserService;
+import ru.skillbox.diplom.group33.social.service.config.security.jwt.JwtUser;
 
 @Service
 @Slf4j
 public class JwtUserDetailsService implements UserDetailsService {
 
 
-    private final UserService service;
+    private final AuthService service;
 
-    public JwtUserDetailsService(UserService service) {
+    public JwtUserDetailsService(AuthService service) {
         this.service = service;
     }
 

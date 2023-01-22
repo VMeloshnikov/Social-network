@@ -1,4 +1,4 @@
-package ru.skillbox.diplom.group33.social.service.security.jwt;
+package ru.skillbox.diplom.group33.social.service.config.security.jwt;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,10 +23,10 @@ public class JwtTokenFilter extends GenericFilterBean {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        String token = jwtTokenProvider.resolveToken((HttpServletRequest) servletRequest);
+        String access = jwtTokenProvider.resolveToken((HttpServletRequest) servletRequest);
 
-        if (token != null && jwtTokenProvider.validateToken(token)) {
-            Authentication authentication = jwtTokenProvider.getAuthentication(token);
+        if (access != null && jwtTokenProvider.validateAccessToken(access)) {
+            Authentication authentication = jwtTokenProvider.getAuthentication(access);
 
             if (authentication != null) {
                 SecurityContextHolder.getContext().setAuthentication(authentication);
